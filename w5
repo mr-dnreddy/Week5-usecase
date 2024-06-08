@@ -1,0 +1,33 @@
+spring.application.name=vechileloc
+server.port=8081
+spring.datasource.url=jdbc:mysql://localhost:3306/vehiclelocdb
+spring.datasource.username=root
+spring.datasource.password=Jambalakadijm@43
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+spring.kafka.bootstrap-servers=localhost:9092
+	spring.cloud.config.import-check.enabled=false
+# Kafka Producer Configuration (if needed)
+spring.kafka.producer.bootstrap-servers=localhost:9092
+spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer=org.springframework.kafka.support.serializer.JsonSerializer
+
+spring.kafka.consumer.group-id=my-group
+spring.kafka.consumer.auto-offset-reset=earliest
+
+
+show databases;
+create database vehiclelocdb
+use vehiclelocdb
+show tables
+
+INSERT INTO vehicle_location (vehicle_number, lat, longitude) VALUES ('MH-02-2011', 22.57, 88.36);
+INSERT INTO vehicle_location (vehicle_number, lat, longitude) VALUES ('MH-02-2012', 22.57, 88.363900);
+INSERT INTO vehicle_location (vehicle_number, lat, longitude) VALUES ('MH-02-2013', 22.57, 88.363910);
+INSERT INTO vehicle_location (vehicle_number, lat, longitude) VALUES ('MH-02-2014', 22.57, 88.363920);
+INSERT INTO vehicle_location (vehicle_number, lat, longitude) VALUES ('MH-02-2015', 22.57, 88.363930);
+
+select * from vehicle_location
+
+
+TRUNCATE TABLE vehicle_location;
